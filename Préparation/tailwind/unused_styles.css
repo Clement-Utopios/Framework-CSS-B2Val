@@ -1,0 +1,19 @@
+.col {
+    font-size: 30px;
+}
+
+.row {
+    display:flex;
+}
+
+.something {
+    font-weight: bold;
+}
+
+#id{
+    margin:auto;
+}
+
+h1 {
+    font-size: larger;
+}

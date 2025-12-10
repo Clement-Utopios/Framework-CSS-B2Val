@@ -715,6 +715,19 @@ La différence avec Bootstrap, c'est les possibilités offertes
 
 ---
 
+## Les tailles
+
+On peut régler la taille avec `w-` et `h-` en passant des valeurs absolus. On peut aussi passer `w-full` ou une fraction `w-1/2`. Il y a également un certain nombre de tailles prédéfinies, de `w-3xs` jusqu'à `w-7xl`. Enfin, on peut utiliser `size-` pour donner la même valeur à la hauteur et à la largeur.
+
+```html
+<p class="mx-auto w-2/3">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam velit arcu, 
+    sagittis vitae velit id, finibus scelerisque neque. Vivamus vulputate scelerisque sodales.  
+</p>
+```
+
+---
+
 <style scoped>
 p {
     font-size:0.95em;
@@ -775,7 +788,7 @@ Quelques autres classes :
 
 ## Variants
 
-Un variant est une condition à l'application d'une classe. Cela peut être un `hover`, un `focus`, la sélection du mode `dark` ou un breakpoint.
+Un variant est une condition à l'application d'une classe. Cela peut être un `hover`, un `focus`, la sélection du mode `dark`, mais aussi l'attribut `required`, `read-only` mais aussi `odd` et `even` quand vous voulez cibler un enfant pair/impair
 
 ```html
 <p class="rounded-md px-5 py-2
@@ -789,7 +802,7 @@ Un variant est une condition à l'application d'une classe. Cela peut être un `
 
 ## Variants
 
-Le responsive design se fait via les variants. Les breakpoints sont assez proches de ceux de Bootstrap
+Le responsive design se fait aussi via les variants. Les breakpoints sont assez proches de ceux de Bootstrap
 
 <center>
 
@@ -881,3 +894,72 @@ Ce breakpoint sera ensuite utilisable comme n'importe quel autre breakpoint
 ```html
 <p class="text-md xxs:text-xl">Hello world</p>
 ```
+
+---
+
+## Personnalisation
+
+On peut aussi appliquer des styles par défaut à certains éléments dans notre projet avec `@layer base`
+
+```css
+@layer base {
+    h1 {
+        color: green;
+    }
+    p {
+        color:blue;
+    }
+}
+```
+
+---
+
+## Personnalisation
+
+`@layer` permet aussi de se créer des classes totalement personnalisée, sur lesquelles on pourra toujours appliquer des utilitaires de Tailwind qui écraseront les valeurs par défaut
+
+```css
+@layer components {  
+    .card {    
+        background-color: var(--color-white);    
+        border-radius: var(--radius-lg);    
+        padding: --spacing(6);    
+        box-shadow: var(--shadow-xl); 
+        }
+    }
+```
+
+---
+
+<!-- _class: lead -->
+<!-- _paginate: false -->
+
+## Purge CSS
+
+---
+
+## Purge CSS
+
+Purge CSS est un outil permettant de supprimer le CSS non-utilisé d'un projet afin d'avoir à la compilation des fichiers CSS plus petits.
+
+PurgeCSS peut s'utiliser avec PostCSS ou Next.js, mais également de manière indépendante. Elle s'installe via npm.
+
+```sh
+npm i -g purgecss
+```
+
+---
+
+## PurgeCSS
+
+On va ensuite utiliser cette commande pour produire un fichier purgé
+
+```sh
+purgecss --css css-a-purger.css --content html-a-analyser.html  --output chemin-fichier-final
+```
+
+---
+
+## PurgeCSS
+
+Tailwind met nativement en oeuvre des mécanismes de PurgeCSS
