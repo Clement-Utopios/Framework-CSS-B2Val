@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet Final - Dashboard Analytics</title>
+  <meta name="description" content="Projet final de la formation Frameworks CSS">
+  
+  <!-- 
+    CHOISISSEZ VOTRE FRAMEWORK :
+    
+    Option 1: Bootstrap 5
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    Option 2: Tailwind CSS (via fichier local après npm install)
+    <link rel="stylesheet" href="./src/styles.css">
+    
+    Option 3: Bulma
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
+    Option 4: Foundation
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css">
+  -->
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+<body>
+  
+  <!-- ============================================ -->
+  <!-- VOTRE DASHBOARD ICI -->
+  <!-- ============================================ -->
+  
+  <div class="app">
+    <!-- 
+      STRUCTURE SUGGÉRÉE :
+      
+      1. SIDEBAR
+         - Logo
+         - Navigation principale
+         - Menu secondaire
+         - Profil utilisateur
+      
+      2. HEADER
+         - Bouton menu mobile
+         - Barre de recherche
+         - Notifications
+         - Toggle dark mode
+         - Menu utilisateur
+      
+      3. MAIN CONTENT
+         - Titre de page
+         - Cards de statistiques (4)
+         - Graphique d'évolution
+         - Tableau de données
+         - Activités récentes
+      
+      4. PAGES ADDITIONNELLES
+         - Page Utilisateurs
+         - Page Paramètres
+    -->
+    
+    <header style="padding: 2rem; text-align: center; background: linear-gradient(135deg, #6366f1, #a855f7); color: white;">
+      <h1>🎨 Projet Final - Dashboard</h1>
+      <p>Choisissez votre framework CSS préféré et créez un dashboard complet !</p>
+      <p style="margin-top: 1rem; opacity: 0.8;">
+        Consultez le README.md pour les critères d'évaluation
+      </p>
+    </header>
+    
+    <main style="max-width: 800px; margin: 2rem auto; padding: 2rem;">
+      <h2>📋 Checklist du Projet</h2>
+      
+      <div style="margin: 1.5rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px;">
+        <h3>Éléments Obligatoires</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li>☐ Sidebar navigation (collapsible sur mobile)</li>
+          <li>☐ Header avec recherche et notifications</li>
+          <li>☐ 4 cards de statistiques avec tendances</li>
+          <li>☐ Graphique d'évolution (Chart.js optionnel)</li>
+          <li>☐ Tableau de données avec pagination</li>
+          <li>☐ Section activités récentes</li>
+          <li>☐ Page Utilisateurs avec liste et filtres</li>
+          <li>☐ Page Paramètres avec formulaire</li>
+          <li>☐ Responsive (mobile, tablet, desktop)</li>
+          <li>☐ Dark mode toggle</li>
+        </ul>
+      </div>
+      
+      <div style="margin: 1.5rem 0; padding: 1.5rem; background: #f0fdf4; border-radius: 8px;">
+        <h3>Bonus</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li>⭐ Animations et transitions travaillées</li>
+          <li>⭐ Graphiques Chart.js fonctionnels</li>
+          <li>⭐ Formulaire de création utilisateur (modal)</li>
+          <li>⭐ Notifications toast</li>
+          <li>⭐ Tests de compatibilité navigateurs</li>
+        </ul>
+      </div>
+      
+      <div style="margin: 1.5rem 0; padding: 1.5rem; background: #fef3c7; border-radius: 8px;">
+        <h3>Critères d'Évaluation</h3>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr>
+            <td style="padding: 0.5rem;">Structure HTML sémantique</td>
+            <td style="padding: 0.5rem; text-align: right;"><strong>/10</strong></td>
+          </tr>
+          <tr>
+            <td style="padding: 0.5rem;">Utilisation du framework</td>
+            <td style="padding: 0.5rem; text-align: right;"><strong>/20</strong></td>
+          </tr>
+          <tr>
+            <td style="padding: 0.5rem;">Responsive design</td>
+            <td style="padding: 0.5rem; text-align: right;"><strong>/15</strong></td>
+          </tr>
+          <tr>
+            <td style="padding: 0.5rem;">Customisation</td>
+            <td style="padding: 0.5rem; text-align: right;"><strong>/15</strong></td>
+          </tr>
+          <tr>
+            <td style="padding: 0.5rem;">UX/UI</td>
+            <td style="padding: 0.5rem; text-align: right;"><strong>/15</strong></td>
+          </tr>
+          <tr>
+            <td style="padding: 0.5rem;">Code quality</td>
+            <td style="padding: 0.5rem; text-align: right;"><strong>/10</strong></td>
+          </tr>
+          <tr>
+            <td style="padding: 0.5rem;">Optimisation</td>
+            <td style="padding: 0.5rem; text-align: right;"><strong>/10</strong></td>
+          </tr>
+          <tr>
+            <td style="padding: 0.5rem;">Bonus</td>
+            <td style="padding: 0.5rem; text-align: right;"><strong>/5</strong></td>
+          </tr>
+          <tr style="border-top: 2px solid #ccc;">
+            <td style="padding: 0.5rem;"><strong>Total</strong></td>
+            <td style="padding: 0.5rem; text-align: right;"><strong>/100</strong></td>
+          </tr>
+        </table>
+      </div>
+    </main>
+    
+    <footer style="text-align: center; padding: 2rem; color: #64748b;">
+      <p>Formation Frameworks CSS - Utopios © 2024</p>
+    </footer>
+  </div>
+  
+  <!-- 
+    SCRIPTS :
+    
+    Bootstrap:
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    Foundation:
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js"></script>
+    
+    Chart.js (optionnel):
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  -->
+  
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

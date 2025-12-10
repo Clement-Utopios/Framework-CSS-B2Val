@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Bulma CSS Demo</title>
+  <meta name="description" content="Démonstration Bulma CSS - Formation Frameworks CSS">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./scss/styles.scss">
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- NAVBAR -->
+  <!-- ============================================ -->
+  <nav class="navbar is-fixed-top is-transparent" id="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold is-size-5" href="#">
+          <span class="has-text-primary">{"}</span> DevFolio
+        </a>
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#about">À propos</a>
+          <a class="navbar-item" href="#skills">Compétences</a>
+          <a class="navbar-item" href="#projects">Projets</a>
+          <a class="navbar-item" href="#experience">Expérience</a>
+          <a class="navbar-item" href="#contact">Contact</a>
+          <div class="navbar-item">
+            <a class="button is-primary is-rounded" href="#contact">
+              <span class="icon"><i class="fas fa-paper-plane"></i></span>
+              <span>Me contacter</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================ -->
+  <!-- HERO SECTION -->
+  <!-- ============================================ -->
+  <section class="hero is-fullheight is-gradient is-pattern">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-6">
+            <p class="subtitle is-6 has-text-white-ter mb-2">
+              <span class="icon"><i class="fas fa-hand-wave"></i></span>
+              Bonjour, je suis
+            </p>
+            <h1 class="title is-1 has-text-white mb-4">
+              Marie Dupont
+            </h1>
+            <h2 class="subtitle is-3 has-text-white-ter mb-5">
+              Développeuse Full Stack
+            </h2>
+            <p class="has-text-white-ter is-size-5 mb-5" style="max-width: 500px; opacity: 0.9;">
+              Passionnée par le développement web moderne et les interfaces utilisateur élégantes. 
+              5 ans d'expérience en React, Node.js et Python.
+            </p>
+            <div class="buttons">
+              <a class="button is-white is-medium" href="#projects">
+                <span class="icon"><i class="fas fa-folder-open"></i></span>
+                <span>Voir mes projets</span>
+              </a>
+              <a class="button is-primary is-inverted is-outlined is-medium" href="#contact">
+                <span class="icon"><i class="fas fa-download"></i></span>
+                <span>Télécharger CV</span>
+              </a>
+            </div>
+            <div class="mt-5">
+              <a href="#" class="social-icon mr-3"><i class="fab fa-github"></i></a>
+              <a href="#" class="social-icon mr-3"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-icon mr-3"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-dribbble"></i></a>
+            </div>
+          </div>
+          <div class="column is-6 has-text-centered">
+            <figure class="image is-square" style="max-width: 400px; margin: 0 auto;">
+              <img src="https://placehold.co/400x400/ffffff/6366f1?text=Photo" 
+                   alt="Marie Dupont" 
+                   class="is-rounded"
+                   style="border: 4px solid rgba(255,255,255,0.3);">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-foot">
+      <div class="container has-text-centered pb-5">
+        <a href="#about" class="has-text-white">
+          <span class="icon is-large">
+            <i class="fas fa-chevron-down fa-2x" style="animation: bounce 2s infinite;"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- ABOUT SECTION -->
+  <!-- ============================================ -->
+  <section class="section is-large" id="about">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-5">
+          <figure class="image is-4by5">
+            <img src="https://placehold.co/400x500/f1f5f9/6366f1?text=About+Me" 
+                 alt="About" 
+                 class="has-radius-large"
+                 style="border-radius: 1rem;">
+          </figure>
+        </div>
+        <div class="column is-6 is-offset-1">
+          <p class="is-size-7 has-text-weight-semibold has-text-primary mb-2">À PROPOS</p>
+          <h2 class="title is-2 mb-4">Créer des expériences digitales mémorables</h2>
+          <p class="is-size-5 has-text-grey mb-4">
+            Développeuse passionnée basée à Paris, je combine créativité et expertise technique 
+            pour donner vie à des projets web innovants.
+          </p>
+          <p class="has-text-grey mb-5">
+            Après un parcours en école d'ingénieur et 5 années d'expérience en agence et startup, 
+            j'ai développé une expertise solide en développement front-end et back-end. 
+            Je suis particulièrement intéressée par l'accessibilité web et les performances.
+          </p>
+          <div class="columns is-mobile">
+            <div class="column">
+              <p class="title is-1 has-text-primary">50+</p>
+              <p class="subtitle is-6 has-text-grey">Projets réalisés</p>
+            </div>
+            <div class="column">
+              <p class="title is-1 has-text-primary">5</p>
+              <p class="subtitle is-6 has-text-grey">Années d'exp.</p>
+            </div>
+            <div class="column">
+              <p class="title is-1 has-text-primary">30+</p>
+              <p class="subtitle is-6 has-text-grey">Clients satisfaits</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SKILLS SECTION -->
+  <!-- ============================================ -->
+  <section class="section is-large has-background-light" id="skills">
+    <div class="container">
+      <div class="has-text-centered mb-6">
+        <p class="is-size-7 has-text-weight-semibold has-text-primary mb-2">COMPÉTENCES</p>
+        <h2 class="title is-2">Technologies maîtrisées</h2>
+        <p class="subtitle is-5 has-text-grey" style="max-width: 600px; margin: 0 auto;">
+          Un ensemble de compétences techniques et outils modernes pour créer des applications performantes.
+        </p>
+      </div>
+      
+      <div class="columns is-multiline">
+        <!-- Frontend -->
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-content">
+              <div class="has-text-centered mb-4">
+                <span class="icon is-large has-text-primary">
+                  <i class="fas fa-laptop-code fa-3x"></i>
+                </span>
+              </div>
+              <h3 class="title is-4 has-text-centered">Frontend</h3>
+              <div class="content">
+                <div class="mb-4">
+                  <div class="is-flex is-justify-content-space-between mb-1">
+                    <span>React / Next.js</span>
+                    <span class="has-text-grey">95%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                </div>
+                <div class="mb-4">
+                  <div class="is-flex is-justify-content-space-between mb-1">
+                    <span>TypeScript</span>
+                    <span class="has-text-grey">90%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                </div>
+                <div class="mb-4">
+                  <div class="is-flex is-justify-content-space-between mb-1">
+                    <span>CSS / Tailwind</span>
+                    <span class="has-text-grey">92%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Backend -->
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-content">
+              <div class="has-text-centered mb-4">
+                <span class="icon is-large has-text-primary">
+                  <i class="fas fa-server fa-3x"></i>
+                </span>
+              </div>
+              <h3 class="title is-4 has-text-centered">Backend</h3>
+              <div class="content">
+                <div class="mb-4">
+                  <div class="is-flex is-justify-content-space-between mb-1">
+                    <span>Node.js / Express</span>
+                    <span class="has-text-grey">88%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                </div>
+                <div class="mb-4">
+                  <div class="is-flex is-justify-content-space-between mb-1">
+                    <span>Python / Django</span>
+                    <span class="has-text-grey">85%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                </div>
+                <div class="mb-4">
+                  <div class="is-flex is-justify-content-space-between mb-1">
+                    <span>PostgreSQL</span>
+                    <span class="has-text-grey">80%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tools -->
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-content">
+              <div class="has-text-centered mb-4">
+                <span class="icon is-large has-text-primary">
+                  <i class="fas fa-tools fa-3x"></i>
+                </span>
+              </div>
+              <h3 class="title is-4 has-text-centered">Outils</h3>
+              <div class="content">
+                <div class="mb-4">
+                  <div class="is-flex is-justify-content-space-between mb-1">
+                    <span>Git / GitHub</span>
+                    <span class="has-text-grey">95%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                </div>
+                <div class="mb-4">
+                  <div class="is-flex is-justify-content-space-between mb-1">
+                    <span>Docker / K8s</span>
+                    <span class="has-text-grey">75%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                </div>
+                <div class="mb-4">
+                  <div class="is-flex is-justify-content-space-between mb-1">
+                    <span>Figma</span>
+                    <span class="has-text-grey">70%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- PROJECTS SECTION -->
+  <!-- ============================================ -->
+  <section class="section is-large" id="projects">
+    <div class="container">
+      <div class="has-text-centered mb-6">
+        <p class="is-size-7 has-text-weight-semibold has-text-primary mb-2">PORTFOLIO</p>
+        <h2 class="title is-2">Projets récents</h2>
+        <p class="subtitle is-5 has-text-grey" style="max-width: 600px; margin: 0 auto;">
+          Une sélection de projets sur lesquels j'ai travaillé récemment.
+        </p>
+      </div>
+      
+      <!-- Filter tabs -->
+      <div class="tabs is-centered is-boxed mb-5">
+        <ul>
+          <li class="is-active"><a>Tous</a></li>
+          <li><a>Web Apps</a></li>
+          <li><a>Mobile</a></li>
+          <li><a>Design</a></li>
+        </ul>
+      </div>
+      
+      <div class="columns is-multiline">
+        <!-- Project 1 -->
+        <div class="column is-4">
+          <div class="card is-hoverable">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://placehold.co/400x300/6366f1/ffffff?text=E-Commerce" alt="E-Commerce">
+              </figure>
+              <div class="overlay">
+                <div class="buttons">
+                  <a class="button is-primary is-rounded" href="#">
+                    <span class="icon"><i class="fas fa-eye"></i></span>
+                  </a>
+                  <a class="button is-light is-rounded" href="#">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="tags mb-3">
+                <span class="tag is-primary is-light">React</span>
+                <span class="tag is-primary is-light">Node.js</span>
+                <span class="tag is-primary is-light">MongoDB</span>
+              </div>
+              <h4 class="title is-5">E-Commerce Platform</h4>
+              <p class="has-text-grey">Plateforme e-commerce complète avec paiement Stripe et gestion des stocks.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="column is-4">
+          <div class="card is-hoverable">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://placehold.co/400x300/22c55e/ffffff?text=Dashboard" alt="Dashboard">
+              </figure>
+              <div class="overlay">
+                <div class="buttons">
+                  <a class="button is-primary is-rounded" href="#">
+                    <span class="icon"><i class="fas fa-eye"></i></span>
+                  </a>
+                  <a class="button is-light is-rounded" href="#">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="tags mb-3">
+                <span class="tag is-primary is-light">Next.js</span>
+                <span class="tag is-primary is-light">Tailwind</span>
+                <span class="tag is-primary is-light">Chart.js</span>
+              </div>
+              <h4 class="title is-5">Analytics Dashboard</h4>
+              <p class="has-text-grey">Dashboard analytics avec visualisations de données en temps réel.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="column is-4">
+          <div class="card is-hoverable">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://placehold.co/400x300/f59e0b/ffffff?text=App+Mobile" alt="App Mobile">
+              </figure>
+              <div class="overlay">
+                <div class="buttons">
+                  <a class="button is-primary is-rounded" href="#">
+                    <span class="icon"><i class="fas fa-eye"></i></span>
+                  </a>
+                  <a class="button is-light is-rounded" href="#">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="tags mb-3">
+                <span class="tag is-primary is-light">React Native</span>
+                <span class="tag is-primary is-light">Firebase</span>
+              </div>
+              <h4 class="title is-5">Fitness App</h4>
+              <p class="has-text-grey">Application mobile de suivi d'entraînement avec gamification.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="has-text-centered mt-5">
+        <a class="button is-primary is-outlined is-medium" href="#">
+          <span>Voir tous les projets</span>
+          <span class="icon"><i class="fas fa-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- EXPERIENCE SECTION -->
+  <!-- ============================================ -->
+  <section class="section is-large has-background-light" id="experience">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-5">
+          <p class="is-size-7 has-text-weight-semibold has-text-primary mb-2">PARCOURS</p>
+          <h2 class="title is-2 mb-4">Expérience professionnelle</h2>
+          <p class="has-text-grey mb-5">
+            Un parcours riche qui m'a permis de développer des compétences variées 
+            et une vision globale du développement web.
+          </p>
+          <a class="button is-primary" href="#">
+            <span class="icon"><i class="fas fa-download"></i></span>
+            <span>Télécharger mon CV</span>
+          </a>
+        </div>
+        <div class="column is-6 is-offset-1">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="box">
+                <div class="is-flex is-justify-content-space-between is-align-items-start mb-2">
+                  <h4 class="title is-5 mb-0">Lead Developer</h4>
+                  <span class="tag is-primary is-light">2022 - Présent</span>
+                </div>
+                <p class="has-text-primary has-text-weight-medium mb-2">TechStartup SAS</p>
+                <p class="has-text-grey">
+                  Direction technique d'une équipe de 5 développeurs. 
+                  Mise en place de l'architecture microservices et CI/CD.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="box">
+                <div class="is-flex is-justify-content-space-between is-align-items-start mb-2">
+                  <h4 class="title is-5 mb-0">Développeuse Full Stack</h4>
+                  <span class="tag is-primary is-light">2020 - 2022</span>
+                </div>
+                <p class="has-text-primary has-text-weight-medium mb-2">Digital Agency</p>
+                <p class="has-text-grey">
+                  Développement d'applications web sur mesure pour des clients variés.
+                  Spécialisation en React et Node.js.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="box">
+                <div class="is-flex is-justify-content-space-between is-align-items-start mb-2">
+                  <h4 class="title is-5 mb-0">Développeuse Junior</h4>
+                  <span class="tag is-primary is-light">2019 - 2020</span>
+                </div>
+                <p class="has-text-primary has-text-weight-medium mb-2">WebCorp</p>
+                <p class="has-text-grey">
+                  Premiers pas en développement professionnel. 
+                  Formation sur les bonnes pratiques et méthodologies agiles.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- CONTACT SECTION -->
+  <!-- ============================================ -->
+  <section class="section is-large" id="contact">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-5">
+          <p class="is-size-7 has-text-weight-semibold has-text-primary mb-2">CONTACT</p>
+          <h2 class="title is-2 mb-4">Travaillons ensemble !</h2>
+          <p class="has-text-grey mb-5">
+            Vous avez un projet en tête ? N'hésitez pas à me contacter. 
+            Je suis toujours ouverte à discuter de nouvelles opportunités.
+          </p>
+          <div class="mb-4">
+            <p class="is-flex is-align-items-center mb-3">
+              <span class="icon has-text-primary mr-3"><i class="fas fa-envelope"></i></span>
+              <a href="mailto:marie@devfolio.com">marie@devfolio.com</a>
+            </p>
+            <p class="is-flex is-align-items-center mb-3">
+              <span class="icon has-text-primary mr-3"><i class="fas fa-phone"></i></span>
+              <span>+33 6 12 34 56 78</span>
+            </p>
+            <p class="is-flex is-align-items-center">
+              <span class="icon has-text-primary mr-3"><i class="fas fa-map-marker-alt"></i></span>
+              <span>Paris, France</span>
+            </p>
+          </div>
+        </div>
+        <div class="column is-6 is-offset-1">
+          <div class="box">
+            <form>
+              <div class="columns is-multiline">
+                <div class="column is-6">
+                  <div class="field">
+                    <label class="label">Nom</label>
+                    <div class="control has-icons-left">
+                      <input class="input" type="text" placeholder="Votre nom">
+                      <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control has-icons-left">
+                      <input class="input" type="email" placeholder="votre@email.com">
+                      <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-12">
+                  <div class="field">
+                    <label class="label">Sujet</label>
+                    <div class="control">
+                      <div class="select is-fullwidth">
+                        <select>
+                          <option>Sélectionnez un sujet</option>
+                          <option>Projet freelance</option>
+                          <option>Opportunité d'emploi</option>
+                          <option>Collaboration</option>
+                          <option>Autre</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-12">
+                  <div class="field">
+                    <label class="label">Message</label>
+                    <div class="control">
+                      <textarea class="textarea" placeholder="Décrivez votre projet..." rows="5"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-12">
+                  <button class="button is-primary is-fullwidth is-medium" type="submit">
+                    <span class="icon"><i class="fas fa-paper-plane"></i></span>
+                    <span>Envoyer le message</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-4">
+          <h3 class="title is-5">DevFolio</h3>
+          <p class="mb-4">
+            Développeuse Full Stack passionnée par la création d'expériences web exceptionnelles.
+          </p>
+          <div>
+            <a href="#" class="social-icon mr-2"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon mr-2"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon mr-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-dribbble"></i></a>
+          </div>
+        </div>
+        <div class="column is-2 is-offset-2">
+          <h4 class="title is-6">Navigation</h4>
+          <ul>
+            <li class="mb-2"><a href="#about">À propos</a></li>
+            <li class="mb-2"><a href="#skills">Compétences</a></li>
+            <li class="mb-2"><a href="#projects">Projets</a></li>
+            <li class="mb-2"><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="column is-2">
+          <h4 class="title is-6">Services</h4>
+          <ul>
+            <li class="mb-2"><a href="#">Développement Web</a></li>
+            <li class="mb-2"><a href="#">Applications Mobile</a></li>
+            <li class="mb-2"><a href="#">Consulting</a></li>
+            <li class="mb-2"><a href="#">Formation</a></li>
+          </ul>
+        </div>
+        <div class="column is-2">
+          <h4 class="title is-6">Légal</h4>
+          <ul>
+            <li class="mb-2"><a href="#">Mentions légales</a></li>
+            <li class="mb-2"><a href="#">Confidentialité</a></li>
+            <li class="mb-2"><a href="#">CGU</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr style="background: rgba(255,255,255,0.1);">
+      <div class="has-text-centered">
+        <p>© 2024 Marie Dupont. Fait avec <span class="has-text-danger">❤</span> et Bulma CSS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+
+  <script>
+    // Navbar burger toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.querySelector('.navbar-burger');
+      const menu = document.querySelector('.navbar-menu');
+      
+      burger?.addEventListener('click', () => {
+        burger.classList.toggle('is-active');
+        menu?.classList.toggle('is-active');
+      });
+      
+      // Navbar scroll effect
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar?.classList.add('is-scrolled');
+        } else {
+          navbar?.classList.remove('is-scrolled');
+        }
+      });
+      
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            const offsetTop = target.offsetTop - 80;
+            window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+            
+            // Close mobile menu
+            burger?.classList.remove('is-active');
+            menu?.classList.remove('is-active');
+          }
+        });
+      });
+      
+      // Animate skill bars on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.skill-progress').forEach(bar => {
+              const width = bar.style.width;
+              bar.style.width = '0';
+              setTimeout(() => { bar.style.width = width; }, 100);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      
+      document.querySelectorAll('.skill-bar').forEach(el => observer.observe(el.parentElement));
+    });
+  </script>
+</body>
+</html>

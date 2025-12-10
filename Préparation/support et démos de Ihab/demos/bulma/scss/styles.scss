@@ -1,0 +1,336 @@
+// ============================================
+// BULMA - STYLES PERSONNALISÉS
+// Formation Frameworks CSS - Utopios
+// ============================================
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+// ============================================
+// Variables personnalisées (AVANT l'import Bulma)
+// ============================================
+
+// Couleurs
+$primary: #6366f1;
+$info: #0ea5e9;
+$success: #22c55e;
+$warning: #f59e0b;
+$danger: #ef4444;
+$dark: #1e293b;
+$light: #f8fafc;
+
+// Couleurs dérivées
+$primary-light: findLightColor($primary);
+$primary-dark: findDarkColor($primary);
+
+// Typographie
+$family-sans-serif: 'Inter', system-ui, sans-serif;
+$family-primary: $family-sans-serif;
+$title-family: 'Poppins', sans-serif;
+
+// Tailles
+$body-size: 16px;
+$size-1: 3rem;
+$size-2: 2.5rem;
+$size-3: 2rem;
+$size-4: 1.5rem;
+$size-5: 1.25rem;
+$size-6: 1rem;
+$size-7: 0.875rem;
+
+// Bordures
+$radius-small: 0.375rem;
+$radius: 0.5rem;
+$radius-large: 0.75rem;
+$radius-rounded: 9999px;
+
+// Ombres
+$shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+
+// Navbar
+$navbar-height: 4rem;
+$navbar-item-hover-color: $primary;
+$navbar-item-hover-background-color: transparent;
+
+// Cards
+$card-shadow: $shadow;
+$card-header-shadow: none;
+$card-content-padding: 1.5rem;
+
+// Buttons
+$button-padding-horizontal: 1.25em;
+$button-padding-vertical: calc(0.5em - 1px);
+
+// ============================================
+// Import Bulma
+// ============================================
+@import "../node_modules/bulma/bulma.sass";
+
+// ============================================
+// Styles personnalisés (APRÈS l'import Bulma)
+// ============================================
+
+// Global
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba($primary, 0.2);
+  color: $dark;
+}
+
+// Hero personnalisé
+.hero {
+  &.is-gradient {
+    background: linear-gradient(135deg, $primary 0%, #a855f7 100%);
+  }
+  
+  &.is-pattern {
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+  }
+}
+
+// Navbar transparent sur hero
+.navbar.is-transparent {
+  background: transparent;
+  
+  &.is-fixed-top.is-scrolled {
+    background: white;
+    box-shadow: $shadow;
+    
+    .navbar-item, .navbar-link {
+      color: $dark;
+    }
+  }
+}
+
+// Cards avec hover
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &.is-hoverable:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Card image overlay
+.card-image {
+  position: relative;
+  overflow: hidden;
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($dark, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover .overlay {
+    opacity: 1;
+  }
+}
+
+// Buttons personnalisés
+.button {
+  font-weight: 500;
+  transition: all 0.2s ease;
+  
+  &.is-primary {
+    &:hover {
+      background: darken($primary, 5%);
+    }
+  }
+  
+  &.is-gradient {
+    background: linear-gradient(135deg, $primary 0%, #a855f7 100%);
+    border: none;
+    color: white;
+    
+    &:hover {
+      background: linear-gradient(135deg, darken($primary, 5%) 0%, darken(#a855f7, 5%) 100%);
+    }
+  }
+}
+
+// Tags personnalisés
+.tag {
+  font-weight: 500;
+  
+  &.is-primary.is-light {
+    background: rgba($primary, 0.1);
+    color: $primary;
+  }
+}
+
+// Section spacing
+.section {
+  &.is-large {
+    padding: 6rem 1.5rem;
+  }
+}
+
+// Skill bars
+.skill-bar {
+  height: 0.5rem;
+  background: $light;
+  border-radius: $radius-rounded;
+  overflow: hidden;
+  
+  .skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, $primary, #a855f7);
+    border-radius: $radius-rounded;
+    transition: width 1s ease;
+  }
+}
+
+// Timeline
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: $light;
+  }
+  
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 0.25rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: $primary;
+      border: 2px solid white;
+      box-shadow: $shadow;
+    }
+    
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+// Testimonial card
+.testimonial-card {
+  position: relative;
+  
+  &::before {
+    content: '"';
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    font-size: 4rem;
+    color: $primary;
+    opacity: 0.2;
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+}
+
+// Footer
+.footer {
+  background: $dark;
+  color: rgba(white, 0.7);
+  
+  a {
+    color: rgba(white, 0.7);
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: white;
+    }
+  }
+  
+  .title {
+    color: white;
+  }
+}
+
+// Social icons
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(white, 0.1);
+  color: white;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: $primary;
+    transform: translateY(-3px);
+  }
+}
+
+// Form styling
+.input, .textarea, .select select {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.15);
+  }
+}
+
+// Animation classes
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 768px) {
+  .hero.is-fullheight {
+    min-height: auto;
+    padding: 6rem 0 4rem;
+  }
+  
+  .section.is-large {
+    padding: 4rem 1.5rem;
+  }
+}

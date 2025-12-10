@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {  
+    --color-mint-500: oklch(0.72 0.11 178);
+    --text-godzilla: 200px;
+    --text-vanish: 1px;
+    }
