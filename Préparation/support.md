@@ -54,8 +54,28 @@ section {
 
 ## Installation
 
-- Installation via CDN, téléchargement, ou `npm i Bootstrap`
-- En React, on ajoute en plus cet import à la racine
+Bootstap peut être utilisé avec un CDN
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+crossorigin="anonymous"></script>
+```
+
+---
+
+## Installation
+
+Ou installé avec npm
+
+```sh
+npm install bootstrap
+```
+
+Dans ce cas, on ajoute en plus cet import à la racine de notre projet
 
 ```js
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -513,8 +533,7 @@ code {
 
 ## Les icônes
 
-- Bootstrap fournit également des icônes utilisables en plaçant les classes appropriées dans un élément `i`
-- Utiliser les icônes nécessite d'utiliser un autre CDN/d'installer un autre package
+Bootstrap fournit également des icônes utilisables en plaçant les classes appropriées dans un élément `i`
 
 ```html
 <i class="bi bi-trash3"></i>
@@ -524,6 +543,23 @@ On peut appliquer les autres classes sur nos icônes, notamment les couleurs
 
 ```html
 <i class="bi bi-trash3 text-primary"></i>
+```
+
+---
+
+## Les icônes
+
+Utiliser les icônes nécessite d'utiliser un autre CDN
+
+```html
+<link rel="stylesheet" href=
+"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+```
+
+Ou d'installer un autre package
+
+```sh
+npm install bootstrap-icons
 ```
 
 ---
@@ -599,34 +635,36 @@ C'est l'approche utility-first : chaque classe n'a qu'un seul but, contrairement
 
 ## Installation
 
-Tout comme Bootstrap, Tailwind peut soit être utilisé avec un CDN, soit installé via npm
+Tout comme Bootstrap, Tailwind peut soit être utilisé avec un CDN
 
-On verra notamment deux méthodes pour installer Tailwind
+```html
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+```
 
-Dans tous les cas, on devra importer Tailwind dans un fichier CSS racine
+Ou installé via npm
 
-```css
-@import "tailwindcss";
+```sh
+npm install tailwindcss @tailwindcss/cli
 ```
 
 ---
 
 ## Installation
 
-Avec n'importe quel projet Node
+On importe ensuite Tailwind dans un fichier CSS racine
 
-```sh
-npm install tailwindcss @tailwindcss/cli
+```css
+@import "tailwindcss";
 ```
 
-On doit ensuite build ce fichier, et référencé le fichier build dans notre HTML
+Puis on build ce fichier, et on le référence dans notre HTML
 
 ```sh
 npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
 ```
 
 ---
-
+<!-- 
 <style scoped>
     p, li {
         font-size:0.85em;
@@ -638,7 +676,7 @@ npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
 
 ## Installation
 
-Avec Vite
+On peut ausis l'installer via Vite.
 
 On commence par créer un projet Vite
 
@@ -655,7 +693,7 @@ import tailwindcss from '@tailwindcss/vite';
 ```
 Et `tailwindcss()` dans `plugins`
 
----
+--- -->
 
 ## Généralités
 
@@ -958,8 +996,262 @@ On va ensuite utiliser cette commande pour produire un fichier purgé
 purgecss --css css-a-purger.css --content html-a-analyser.html  --output chemin-fichier-final
 ```
 
+Tailwind met nativement en oeuvre des mécanismes de PurgeCSS
+
 ---
 
-## PurgeCSS
+<!-- _class: lead -->
+<!-- _paginate: false -->
 
-Tailwind met nativement en oeuvre des mécanismes de PurgeCSS
+## Bulma
+
+---
+
+## Présentation et installation
+
+Bulma est, comme Bootstrap, un framework component based, mais il est plus léger et a des possibilités différentes.
+
+Il est lui aussi mobile-first, et il peut lui aussi être utilisé via CDN
+
+```html
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+```
+
+Ou installé avec npm
+
+```sh
+npm install bulma
+```
+
+---
+
+<style scoped>
+p {
+    font-size:0.9em;
+}
+</style>
+
+## Les colonnes
+
+Bulma a un système de `columns` fonctionnant un peu comme le grid system de Bootstrap. Un conteneur `columns` redimensionne et répartit automatiquement les éléments `column` qu'il contient
+
+```html
+<div class="columns">
+    <p class="column button is-link mx-3">Du texte</p>
+    <p class="column button is-link mx-3">Du texte</p>
+    <p class="column button is-link mx-3">Du texte</p>
+</div>
+```
+
+La grosse différence, c'est que sur mobile, elles s'empilent verticalement par défaut
+
+---
+
+## Les colonnes
+
+Un `column` a un gap par défaut, qu'on peut personnaliser avec `is-`, mais comme Bootstrap, c'est un système de padding et pas de margin
+
+```html
+<div class="columns is-8">
+    <p class="column button is-link">Du texte</p>
+    <p class="column button is-link">Du texte</p>
+    <p class="column button is-link">Du texte</p>
+    <p class="column button is-link">Du texte</p>
+    <p class="column button is-link">Du texte</p>
+</div>
+```
+
+---
+
+## Les colonnes
+
+On peut également modifier la taille d'une colonne avec le mot-clé `is-`. Les valeurs vont de 1 à 12, mais peuvent également être `is-full`, `is-half` ainsi que des multiples de cinquième, quarts et tiers
+
+```html
+<div class="columns">
+    <p class="column button is-primary mx-3 is-one-fifth">Du texte</p>
+    <p class="column button is-primary mx-3 is-one-quarter">Du texte</p>
+    <p class="column button is-primary mx-3 is-one-third">Du texte</p>
+    <p class="column button is-primary mx-3 is-1">Du texte</p>
+</div>
+```
+
+---
+
+## Les couleurs
+
+![alt text](<couleurs bulma-1.png>)
+
+Le système de couleurs est également assez proche de celui de Bootstrap. On peut également utiliser `white`, `black`, `light` et `dark`, et rajouter ces deux derniers sur n'import quelle couleur.
+
+---
+
+## Les couleurs
+
+On utilise `has-background-` pour colorer un arrière-plan, `has-text-` pour colorer du texte, et `is-` pour un bouton.
+
+```html
+<div class="has-background-info-dark has-text-light">Hello world</div>
+<button class="button is-link">Valider</button>
+```
+
+---
+
+## Responsive design
+
+Bulma a également un système de breakpoints, mais utilisable pour moins de choses que Bootstrap ou Tailwind.
+
+<center>
+
+| Breakpoint | Largeur |
+|------------|--------|
+| `mobile` ou rien | < 769px |
+| `tablet` | ≥ 769px |
+| `desktop` | ≥ 1024px |
+| `widescreen` | ≥1216px |
+| `fullhd` | ≥1408px |
+
+</center>
+
+---
+
+## Responsive design
+
+Il peut s'utiliser sur la taille, l'orientation et le gap des colonnes, la taille du texte et l'orientation du texte, et la propriété display.
+
+```html
+<div class="columns">
+    <p class="column button is-primary mx-3 is-one-fifth is-three-quarters-widescreen">
+        Du texte
+    </p>
+</div>
+<p class="has-text-centered has-text-left-tablet has-text-right-widescreen">Du texte</p>
+<p class="is-size-5 is-size-4-tablet is-size-3-desktop is-size-2-widescreen is-size-1-fullhd">
+    Hello world
+    </p>
+```
+
+---
+
+<!-- _class: lead -->
+<!-- _paginate: false -->
+
+## Foundation
+
+---
+
+## Foundation
+
+Foundation est un framework plus lourd et plus complexe, créé par l'agence de design ZURB, pensé pour être très personnalisé et offrant moins de styles par défaut que Bulma ou Bootstrap. Il offre aussi plus de support pour l'accessibilité, notamment une partie de la documentation dédiée à intégrer ARIA.
+
+---
+
+## Installation
+
+Foundation peut être utilisé via un CDN
+
+```html
+<link rel="stylesheet" href=
+"https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css" 
+crossorigin="anonymous">
+<script src=
+"https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js" 
+crossorigin="anonymous"></script>
+```
+
+Ou installé avec npm
+
+```sh
+npm install foundation-sites 
+```
+
+---
+
+<style scoped>
+p {
+    font-size:0.9em;
+}
+</style>
+
+## XY Grid
+
+Foundation possède un système de grille de 12 éléments un peu différent de ceux de Bootstrap ou Bulma.
+Il se fait en déclarant explicitement l'axe de notre grille, et la taille de chaque élément. Par défaut, chaque élément prend toute la largeur possible.
+
+```html
+<div class="grid-x">
+    <div class="cell">Cellule prenant toute la largeur</div>
+    <div class="cell small-3">Cellule prenant 1/4 de la largeur</div>
+    <div class="cell small-3">Cellule prenant 1/4 de la largeur</div>
+</div>
+```
+
+Pour définir une taille, on est obligé d'utiliser un breakpoint
+
+
+---
+
+<!-- _class: lead -->
+<!-- _paginate: false -->
+
+## CSS-in-JS
+
+---
+
+
+## Comparatif - Taille et JS
+
+<center>
+
+| Framework | Taille | JavaScript |
+|-----------|--------|------------|
+| Bootstrap | 152 KB | Inclus |
+| Tailwind | ~10-30 KB* | Non |
+| Bulma | 44 KB | Non |
+| Foundation | 90 KB | Inclus |
+
+</center>
+
+---
+
+## Comparatif - Approche
+
+<center>
+
+| Framework | Approche | Customisation |
+|-----------|----------|---------------|
+| Bootstrap | Components | Sass |
+| Tailwind | Utility-first | Config JS |
+| Bulma | Components | Sass |
+| Foundation | Components | Sass |
+
+</center>
+
+---
+
+## Quand utiliser Bootstrap ?
+
+- Prototypes rapides
+- Sites vitrines classiques
+- Équipes mixtes
+- Deadline serrée
+
+---
+
+## Quand utiliser Tailwind ?
+
+- Designs uniques
+- Design systems stricts
+- Applications modernes
+- Projets long terme
+
+---
+
+## Quand utiliser Bulma/Foundation ?
+
+**Bulma** : Projets sans JS, sites statiques
+
+**Foundation** : Projets enterprise, accessibilité
+
+**CSS-in-JS** : Applications React/Vue
