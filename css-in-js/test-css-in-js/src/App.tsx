@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <ButtonComponent value="Valider" />
+      <ButtonComponent value="Valider" color="red"/>
     </>
   )
 }

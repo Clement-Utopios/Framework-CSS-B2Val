@@ -1,38 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
-<body>
-    <main class="p-20 space-y-1">
-        <div class="flex justify-center space-x-2">
-            <p class="w-full bg-blue-600/85 text-center rounded-md border">-</p>
-            <p class="w-full bg-green-700/85 text-center rounded-md border">-</p>
-            <p class="w-full bg-blue-600/85 text-center rounded-md border">-</p>
-            <p class="w-full bg-green-700/85 text-center rounded-md border">-</p>
-            <p class="w-full bg-blue-600/85 text-center rounded-md border">-</p>
+
+<body class="text-bg-dark">
+    <main class="container">
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="recipeEdition" data-bs-theme="dark">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Modification de recettes</h5>
+                <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>Hélas, ce site étant encore en v.0.1, la modification de recettes n'est pas encore implémentée.</p>
+                <p>Retrouvez bientôt cette feature lors de la sortie officielle !</p>
+            </div>
         </div>
-        <div class="flex justify-center space-x-2">
-            <p class="w-full bg-red-700/78 text-center rounded-md border">-</p>
-            <p class="w-full bg-yellow-400 text-center rounded-md border">-</p>
-            <p class="w-full bg-yellow-400 text-center rounded-md border">-</p>
-            <p class="w-full bg-red-700/78 text-center rounded-md border">-</p>
-        </div>
-        <div class="flex justify-center space-x-2">
-            <p class="w-full bg-gray-500/95 text-center rounded-md border">-</p>
-            <p class="w-full bg-cyan-400 text-center rounded-md border">-</p>
-            <p class="w-full bg-gray-500/95 text-center rounded-md border">-</p>
-        </div>
-        <div class="flex justify-center space-x-2">
-            <p class="w-full text-center rounded-md border">-</p>
-            <p class="w-full text-center rounded-md border">-</p>
-        </div>
-        <div class="flex justify-center">
-            <p class="w-full bg-red-700/78 text-center rounded-md border">-</p>
+
+        <h1 class="text-center mt-2 mb-5">Mes recettes</h1>
+        <div class="row row-cols-1 row-cols-md-2 g-3 align-items-center">
+            <div>
+                <div class="col card p-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Gâteau au yaourt</h5>
+                        <p class="card-text">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Yaourt nature <span class="badge bg-warning rounded-circle">P</span></li>
+                            <li class="list-group-item">4 pots de farine</li>
+                            <li class="list-group-item">3 pots de sucre</li>
+                            <li class="list-group-item">3 oeufs</li>
+                            <li class="list-group-item">1 pot d'huile</li>
+                            <li class="list-group-item">1 sachet de levure</li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div>
+                            <div class="alert alert-danger alert-dismissible collapse" id="alert1">
+                                <p>Êtes-vous sûrs de vouloir supprimer cette recette ?</p>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse"
+                                        data-bs-target="#alert1">Annuler</button>
+                                    <button class="btn btn-primary" data-bs-toggle="collapse"
+                                        data-bs-target="#alert1">Valider</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center gap-3">
+                            <button class="btn btn-success" data-bs-toggle="offcanvas" data-bs-target="#recipeEdition"><i class="bi bi-pencil-square"></i></button>
+                            <button class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="#alert1"><i
+                                    class="bi bi-trash3"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="col card p-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Cookies</h5>
+                        <p class="card-text">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">1 oeuf <span class="badge bg-warning rounded-circle">P</span>
+                            </li>
+                            <li class="list-group-item">85g de sucre</li>
+                            <li class="list-group-item">85g de beurre doux <span
+                                    class="badge bg-warning rounded-circle">P</span></li>
+                            <li class="list-group-item">150g de farine</li>
+                            <li class="list-group-item">100g de pépites de chocolat</li>
+                            <li class="list-group-item">1 sachet de sucre vanillée</li>
+                            <li class="list-group-item">1 cuillère à café de levure chimique</li>
+                            <li class="list-group-item">1 pincée de sel</li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div>
+                            <div class="alert alert-danger alert-dismissible collapse" id="alert2" role="alert">
+                                <p>Êtes-vous sûrs de vouloir supprimer cette recette ?</p>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse"
+                                        data-bs-target="#alert2">Annuler</button>
+                                    <button class="btn btn-primary" data-bs-toggle="collapse"
+                                        data-bs-target="#alert2">Valider</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center gap-3">
+                            <button class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
+                            <button class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="#alert2"><i
+                                    class="bi bi-trash3"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="col card p-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Brownie</h5>
+                        <p class="card-text">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">250g de chocolat</li>
+                            <li class="list-group-item">150g de beurre <span
+                                    class="badge bg-warning rounded-circle">P</span></li>
+                            <li class="list-group-item">3 oeufs <span class="badge bg-warning rounded-circle">P</span>
+                            </li>
+                            <li class="list-group-item">150g de sucre</li>
+                            <li class="list-group-item">60g de farine</li>
+                            <li class="list-group-item">1 sachet de sucre vanillée</li>
+                            <li class="list-group-item">1 pincée de sel</li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div>
+                            <div class="alert alert-danger alert-dismissible collapse" id="alert3" role="alert">
+                                <p>Êtes-vous sûrs de vouloir supprimer cette recette ?</p>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse"
+                                        data-bs-target="#alert3">Annuler</button>
+                                    <button class="btn btn-primary" data-bs-toggle="collapse"
+                                        data-bs-target="#alert3">Valider</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center gap-3">
+                            <button class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
+                            <button class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="#alert3"><i
+                                    class="bi bi-trash3"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="col card p-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Pâte à crèpe</h5>
+                        <p class="card-text">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">300g de farine</li>
+                            <li class="list-group-item">3 cuillères à soupe de sucre</li>
+                            <li class="list-group-item">50g de beurre fondu <span
+                                    class="badge bg-warning rounded-circle">P</span></li>
+                            <li class="list-group-item">3 oeufs <span class="badge bg-warning rounded-circle">P</span>
+                            </li>
+                            <li class="list-group-item">60cl de lait <span
+                                    class="badge bg-warning rounded-circle">P</span></li>
+                            <li class="list-group-item">2 cuillères à soupe d'huile</li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div>
+                            <div class="alert alert-danger alert-dismissible collapse" id="alert4" role="alert">
+                                <p>Êtes-vous sûrs de vouloir supprimer cette recette ?</p>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse"
+                                        data-bs-target="#alert4">Annuler</button>
+                                    <button class="btn btn-primary" data-bs-toggle="collapse"
+                                        data-bs-target="#alert4">Valider</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center gap-3">
+                            <button class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
+                            <button class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="#alert4"><i
+                                    class="bi bi-trash3"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </body>
+
 </html>

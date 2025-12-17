@@ -10,19 +10,20 @@ type ButtonProps = {
 }
 
 export const ButtonComponent: React.FC<ButtonProps> = ({ value, color }) => {
-    // const Button = styled.button`
-    //     padding: 10px 15px;
-    //     background-color: ${color ?? "blue"};
-    //     color:white;
-    //     font-size:15px;
-    //     cursor: pointer;
-    //     border: none;
-    //     border-radius:5px;
+    const Button = styled.button`
+        padding: 10px 15px;
+        background-color: ${color ?? "blue"};
+        color:white;
+        font-size:15px;
+        cursor: pointer;
+        border: none;
+        border-radius:5px;
 
-    //     &:hover {
-    //         opacity:0.5;
-    //     }
-    // `;
+        &:hover {
+            opacity:0.5;
+        }
+    `;
+
 
     const buttonStyle = css`
         padding: 10px 15px;
@@ -39,9 +40,10 @@ export const ButtonComponent: React.FC<ButtonProps> = ({ value, color }) => {
     `;
 
     return (
-    // <Button>{value}</Button>
-
-    <button css={buttonStyle}>{value}</button>
+        <>
+            {/* <Button>{value}</Button> */}
+            <button css={buttonStyle}>{value}</button>
+        </>
 
   )
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <script>
+        const expand = () => document.getElementById("navExpand").classList.toggle("hidden");
+     </script>
+</head>
+<body class="bg-neutral-800 text-neutral-200">
+    <header>
+        <nav class="h-20 border border-black/50 rounded flex justify-between">
+            <div class="flex gap-2">
+                <img src="../assets/ecole-it.png" alt="" class="h-3/4">
+                <ul class="max-md:hidden">
+                    <li>Accueil</li>
+                    <li>Actualités</li>
+                    <li>Inscription</li>
+                </ul>
+            </div>
+            <div>
+                <button onclick="expand">
+                    <img src="../tailwind/transparent-hd-white-menu-burger-icon-701751695037039ulxnzxwywi.png" width="50" alt="" class="cursor-pointer">
+                </button>
+                <ul class="bg-neutral-800 rounded space-y-3" id="navExpand">
+                    <li>Accueil</li>
+                    <li>Actualités</li>
+                    <li>Inscription</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1 class="text-center text-2xl mt-5">Hello world</h1>
+    </main>
+</body>
+</html>
